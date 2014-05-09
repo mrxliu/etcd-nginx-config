@@ -41,8 +41,8 @@ func readAppsFromEtcd(client *etcd.Client, prefix string) ([]Webapp, error) {
 		appName := strings.Replace(appNode.Key, appPrefix, "", 1)
 		app := Webapp{
 			ID:        appName,
-			Endpoints: getEtcdValues(&appNode, "endpoint"),
-			VHosts:    getEtcdValues(&appNode, "vhost"),
+			Endpoints: getEtcdValues(appNode, "endpoint"),
+			VHosts:    getEtcdValues(appNode, "vhost"),
 		}
 		apps = append(apps, app)
 	}

@@ -14,7 +14,7 @@ func getEtcdValues(node *etcd.Node, key string) []string {
 		}
 	} else {
 		for _, subNode := range node.Nodes {
-			subValues := getEtcdValues(&subNode, key)
+			subValues := getEtcdValues(subNode, key)
 			for _, subValue := range subValues {
 				valuesMap[subValue] = true
 			}
