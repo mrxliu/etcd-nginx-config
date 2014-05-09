@@ -6,9 +6,10 @@ import (
 
 // Represents this app's possible configuration values
 type Config struct {
-	Hosts  string
-	Prefix string
-	Outdir string
+	Hosts   string
+	Prefix  string
+	Outdir  string
+	PIDfile string
 }
 
 // Generates and returns a new Config based on the command-line
@@ -21,13 +22,17 @@ func newConfig() Config {
 			"/apps",
 			"top-level etcd key for apps")
 		outdir = flag.String("nginx-dir",
-			"conf.d",
+			"/etc/nginx/conf.d",
 			"output dir for nginx virtual host files")
+		pidfile = flag.String("nginx-pid",
+			"/var/run/nginx.pid",
+			"location of the nginx PID file")
 	)
 	flag.Parse()
 	return Config{
-		Hosts:  *hosts,
-		Prefix: *prefix,
-		Outdir: *outdir,
+		Hosts:   *hosts,
+		Prefix:  *prefix,
+		Outdir:  *outdir,
+		PIDfile: *pidfile,
 	}
 }

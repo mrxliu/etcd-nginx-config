@@ -1,6 +1,6 @@
 Etcd-Nginx Web Router
 ================
-Writes NGinx reverse-proxy config files for multiple backends, based on data in [etcd][1].
+Writes NGiNX reverse-proxy config files for multiple backends, based on data in [etcd][1].
 
   *ALPHA VERSION - needs more tests*
 
@@ -10,7 +10,7 @@ What is it?
 ----------------
 This program connects to the etcd configuration service and reads information about web apps. It builds a list of web apps, including each app's HTTP endpoints and virtual host names, then exports one Nginx reverse-proxy configuration file for each app.
 
-The software then watches etcd for changes, updates the files as needed, and signals NGinx (via PID file) to reload its configuration.
+The software then watches etcd for changes, updates the files as needed, and signals NGiNX (via PID file) to reload its configuration.
 
 
 ----------------
