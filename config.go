@@ -8,6 +8,7 @@ import (
 type Config struct {
 	Hosts  string
 	Prefix string
+	Outdir string
 }
 
 // Generates and returns a new Config based on the command-line
@@ -19,11 +20,14 @@ func newConfig() Config {
 		prefix = flag.String("etcd-prefix",
 			"/apps",
 			"top-level etcd key for apps")
+		outdir = flag.String("nginx-dir",
+			"conf.d",
+			"output dir for nginx virtual host files")
 	)
 	flag.Parse()
-	config := Config{
+	return Config{
 		Hosts:  *hosts,
 		Prefix: *prefix,
+		Outdir: *outdir,
 	}
-	return config
 }

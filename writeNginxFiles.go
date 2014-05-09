@@ -6,11 +6,11 @@ import (
 	"os"
 )
 
-func writeNginxFiles(client *etcd.Client, prefix string) error {
-	apps, err := readAppsFromEtcd(client, prefix)
+func writeNginxFiles(client *etcd.Client, config *Config) error {
+	apps, err := readAppsFromEtcd(client, config.Prefix)
 	if err == nil {
 		for _, app := range apps {
-			outPath := fmt.Sprintf("conf.d/%s-vhost.conf", app.ID)
+			outPath := fmt.Sprintf("%s/%s.conf", config.Outdir, app.ID)
 			fmt.Printf("Writing file: %s...\n", outPath)
 			var outFile *os.File
 			outFile, err = os.Create(outPath)

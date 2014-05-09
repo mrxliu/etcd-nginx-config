@@ -29,7 +29,7 @@ func (app *Webapp) Render(output io.Writer) error {
 	return err
 }
 
-// Returns all Webapps from the given Client beneath prefix
+// Returns all Webapps from the given etcd Client beneath prefix
 func readAppsFromEtcd(client *etcd.Client, prefix string) ([]Webapp, error) {
 	response, err := client.Get(prefix, true, true)
 	if err != nil {

@@ -12,7 +12,7 @@ func main() {
 	// write initial nginx config to filesystem
 	fmt.Println("Connecting to etcd on hosts:", config.Hosts)
 	client := etcd.NewClient([]string{config.Hosts})
-	err := writeNginxFiles(client, config.Prefix)
+	err := writeNginxFiles(client, &config)
 	if err != nil {
 		fmt.Println(err.Error())
 		os.Exit(1)
@@ -23,7 +23,7 @@ func main() {
 	go client.Watch(config.Prefix, 0, true, etcdQueue, nil)
 	for {
 		<-etcdQueue
-		err := writeNginxFiles(client, config.Prefix)
+		err := writeNginxFiles(client, &config)
 		if err != nil {
 			fmt.Println(err.Error())
 		}
