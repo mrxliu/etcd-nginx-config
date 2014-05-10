@@ -28,7 +28,7 @@ Download the latest binary for your OS:
 * [Latest for OS X][osx-latest]
 * [Latest for Windows/64-bit][windows-latest] _(signalling not supported)_
 
-Put it wherever you like. Somewhere in your $PATH might be handy.
+Uncompress it wherever you like. Somewhere in your $PATH might be handy.
 
 
 ----------------
@@ -97,6 +97,6 @@ The project is still in its early stages. Pull requests are welcome! Here's how 
 [1]: https://github.com/coreos/etcd
 [2]: http://golang.org/doc/install
 
-[linux-latest]: #
-[osx-latest]: #
-[windows-latest]: #
+[linux-latest]: http://download.bentonroberts.com/etcd-nginx-config/0.1.1/etcd-nginx-config-linux-x86_64.tgz
+[osx-latest]: http://download.bentonroberts.com/etcd-nginx-config/0.1.1/etcd-nginx-config-osx.tgz
+[windows-latest]: http://download.bentonroberts.com/etcd-nginx-config/0.1.1/etcd-nginx-config-win64.zip
