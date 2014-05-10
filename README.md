@@ -97,6 +97,6 @@ The project is still in its early stages. Pull requests are welcome! Here's how 
 [1]: https://github.com/coreos/etcd
 [2]: http://golang.org/doc/install
 
-[linux-latest]: http://download.bentonroberts.com/etcd-nginx-config/0.1.1/etcd-nginx-config-linux-x86_64.tgz
-[osx-latest]: http://download.bentonroberts.com/etcd-nginx-config/0.1.1/etcd-nginx-config-osx.tgz
-[windows-latest]: http://download.bentonroberts.com/etcd-nginx-config/0.1.1/etcd-nginx-config-win64.zip
+[linux-latest]: https://github.com/benton/etcd-nginx-config/releases/download/0.1.1/etcd-nginx-config-linux-x86_64.tgz
+[osx-latest]: https://github.com/benton/etcd-nginx-config/releases/download/0.1.1/etcd-nginx-config-osx.tgz
+[windows-latest]: https://github.com/benton/etcd-nginx-config/releases/download/0.1.1/etcd-nginx-config-win64.zip
