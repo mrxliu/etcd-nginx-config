@@ -2,6 +2,8 @@ package main
 
 import (
 	"flag"
+	"fmt"
+	"os"
 )
 
 // Represents this app's possible configuration values
@@ -27,8 +29,14 @@ func newConfig() Config {
 		pidfile = flag.String("nginx-pid",
 			"/var/run/nginx.pid",
 			"location of the nginx PID file")
+		print_version = flag.Bool("version", false,
+			"print version and exit")
 	)
 	flag.Parse()
+	if *print_version {
+		fmt.Println("etd-nginx-config version", VERSION)
+		os.Exit(0)
+	}
 	return Config{
 		Hosts:   *hosts,
 		Prefix:  *prefix,

@@ -7,6 +7,8 @@ import (
 	"syscall"
 )
 
+const VERSION = `0.1.1`
+
 func main() {
 	config := newConfig()
 
