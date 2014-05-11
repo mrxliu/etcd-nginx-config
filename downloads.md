@@ -1,9 +1,5 @@
----
-layout: default
-title: Downloads
----
-
 etcd-nginx-config downloads (version 0.1.2)
+========
 
 ### Darwin (Apple Mac)
 

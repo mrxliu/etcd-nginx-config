@@ -14,15 +14,15 @@ The software then watches etcd for changes, updates the files as needed, and sig
 
 
 ----------------
-Where is it? (Installation)
+Installation
 ----------------
 Download the latest binary for your OS from the [downloads page](downloads.md).
 
-Uncompress it wherever you like. Somewhere in your $PATH might be handy.
+Uncompress it wherever you like. Somewhere in your `$PATH` might be handy.
 
 
 ----------------
-How is it [done]? (Usage)
+Usage
 ----------------
 1) Install nginx and configure it to load all `*.conf` files from a configuration directory (this is the default setup for most packages). The `etcd-nginx-config` binary will write config files to this location, which can be passed to `etcd-nginx-config` as `-nginx-dir`. It defaults to `/etc/nginx/conf.d`.
 
@@ -65,7 +65,7 @@ Interprocess signalling with `SIGHUP` is not supported on Windows, so the auto-r
 
 
 ----------------
-Who is it? (Contribution)
+Contribution / Development
 ----------------
 This software was created by Benton Roberts _(benton@bentonroberts.com)_
 
