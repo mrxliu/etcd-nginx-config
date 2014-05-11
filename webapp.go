@@ -44,7 +44,10 @@ func readAppsFromEtcd(client *etcd.Client, prefix string) ([]Webapp, error) {
 			Endpoints: getEtcdValues(appNode, "endpoint"),
 			VHosts:    getEtcdValues(appNode, "vhost"),
 		}
-		apps = append(apps, app)
+		if (len(app.Endpoints) > 0) && (len(app.VHosts) > 0) {
+			apps = append(apps, app)
+		}
+
 	}
 	return apps, err
 }
