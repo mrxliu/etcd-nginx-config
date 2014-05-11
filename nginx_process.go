@@ -6,7 +6,7 @@ import (
 	"strconv"
 )
 
-// Returns the process ID of NGiNX read from the PID file
+// Returns the process ID of nginx read from the PID file
 func nginxPID(config *Config) (int, error) {
 	pid := -1
 	pidFile, err := os.Open(config.PIDfile)
@@ -28,7 +28,7 @@ func nginxPID(config *Config) (int, error) {
 	return pid, err
 }
 
-// Returns a pointer to the NGiNX process specified by the PID file, if running.
+// Returns a pointer to the nginx process specified by the PID file, if running.
 func nginxProcess(config *Config) (*os.Process, error) {
 	pid, err := nginxPID(config)
 	if err != nil {

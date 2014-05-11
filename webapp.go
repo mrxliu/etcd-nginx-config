@@ -20,7 +20,7 @@ func (app *Webapp) HostList() string {
 	return strings.Join(app.VHosts, " ")
 }
 
-// Renders an NGiNX VHost template for the given app to the Writer output
+// Renders an nginx VHost template for the given app to the Writer output
 func (app *Webapp) Render(output io.Writer) error {
 	tmpl, err := template.New(app.ID).Parse(DEFAULT_VHOST_TEMPLATE)
 	if err == nil {

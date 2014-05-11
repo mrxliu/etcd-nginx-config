@@ -6,17 +6,11 @@ Writes NGiNX reverse-proxy config files for multiple backends, based on data in 
 
 
 ----------------
-What is it?
+Overview
 ----------------
-This program connects to the etcd configuration service and looks for information about backend web apps. It builds a list of such apps, their HTTP endpoints and virtual host names, and then writes one Nginx reverse-proxy configuration file for each app.
+This program enables dynamic, centralized HTTP routing based on minimal config. It connects to the etcd configuration service and looks for information about backend web apps. It builds a list of such apps, their HTTP endpoints and virtual host names, and then writes one Nginx reverse-proxy configuration file for each app.
 
-The software then watches etcd for changes, updates the files as needed, and signals NGiNX (via its PID file) to reload its configuration.
-
-
-----------------
-Why is it?
-----------------
-* Enables dynamic, centralized HTTP routing based on minimal config.
+The software then watches etcd for changes, updates the files as needed, and signals nginx (via its PID file) to reload its configuration.
 
 
 ----------------
@@ -34,9 +28,9 @@ Uncompress it wherever you like. Somewhere in your $PATH might be handy.
 ----------------
 How is it [done]? (Usage)
 ----------------
-1) Install NGiNX and configure it to load all `*.conf` files from a configuration directory (this is the default setup for most packages). The `etcd-nginx-config` binary will write config files to this location, which can be passed to `etcd-nginx-config` as `-nginx-dir`. It defaults to `/etc/nginx/conf.d`.
+1) Install nginx and configure it to load all `*.conf` files from a configuration directory (this is the default setup for most packages). The `etcd-nginx-config` binary will write config files to this location, which can be passed to `etcd-nginx-config` as `-nginx-dir`. It defaults to `/etc/nginx/conf.d`.
 
-2) Start NGiNX. It will create a PID file, which this software reads in order to signal NGiNX to reload its config. The path to this PID file can be passed as `-nginx-pid`, but defaults to `/var/run/nginx.pid`.
+2) Start nginx. It will create a PID file, which this software reads in order to signal nginx to reload its config. The path to this PID file can be passed as `-nginx-pid`, but defaults to `/var/run/nginx.pid`.
 
 3) Seed etcd with info about your backend web apps. Each backend app is just a list of HTTP endpoints and a list of virtual hostname patterns, both assocated with an ID. All data about the web apps is stored beneath a top-level key, the `-etcd-prefix`, which defaults to `/apps`. So here's how you might route all requests for `myapp1.mydomain.com` to a single HTTP listener:
 
@@ -63,15 +57,15 @@ Besides the node names directly beneath the `-etcd-prefix`, the only other value
       -version=false: print version and exit
 
 
-  _Note that if nginx is running as root, then `etcd-nginx-config` will also need to run as root, or it cannot signal NGiNX to reload the configration files._
+  _Note that if nginx is running as root, then `etcd-nginx-config` will also need to run as root, or it cannot signal nginx to reload the configration files._
 
-Once running, `etcd-nginx-config` will watch etcd for any changes beneath the `-etd-prefix`. When changes occur, all config files are re-rendered, and a `SIGHUP` is sent to NGiNX. This causes the web server to reload its configuration without dropping any connections.
+Once running, `etcd-nginx-config` will watch etcd for any changes beneath the `-etd-prefix`. When changes occur, all config files are re-rendered, and a `SIGHUP` is sent to nginx. This causes the web server to reload its configuration without dropping any connections.
 
 
 ----------------
 Known Limitations / Bugs
 ----------------
-NGiNX signalling is not supported on Windows.
+Interprocess signalling with `SIGHUP` is not supported on Windows, so the auto-reload feature won't work there.
 
 
 ----------------

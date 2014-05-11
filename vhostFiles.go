@@ -16,7 +16,7 @@ func confFileName(app *Webapp) string {
 	return fmt.Sprintf("%s%s", app.ID, NGINX_SUFFIX)
 }
 
-// Queries etcd, then writes out an NGiNX configuration file for each app.
+// Queries etcd, then writes out an nginx configuration file for each app.
 // Finally, calls removeOldNginxFiles to remove outdated conf files.
 func writeNginxFiles(client *etcd.Client, config *Config) error {
 	apps, err := readAppsFromEtcd(client, config.Prefix)
