@@ -6,6 +6,7 @@ set -e
 export ETCD_HOST='127.0.0.1'
 export ETCD_PORT='4001'
 export ETCD_PREFIX='/apps'
+etcdctl mkdir $ETCD_PREFIX
 
 APPS='mauth eureka maudit archon'
 for APP in $APPS ; do

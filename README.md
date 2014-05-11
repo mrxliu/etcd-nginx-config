@@ -16,11 +16,7 @@ The software then watches etcd for changes, updates the files as needed, and sig
 ----------------
 Where is it? (Installation)
 ----------------
-Download the latest binary for your OS:
-
-* [Latest for Linux/x86_64][linux-latest]
-* [Latest for OS X][osx-latest]
-* [Latest for Windows/64-bit][windows-latest] _(signalling not supported)_
+Download the latest binary for your OS from the [downloads page](downloads.md).
 
 Uncompress it wherever you like. Somewhere in your $PATH might be handy.
 
