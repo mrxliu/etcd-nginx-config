@@ -14,6 +14,8 @@ type Config struct {
 	PIDfile string
 }
 
+const ETCD_DELAY = 30 // Seconds to wait before retying to connect to etcd
+
 // Generates and returns a new Config based on the command-line
 func newConfig() Config {
 	var (

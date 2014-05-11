@@ -5,9 +5,10 @@ import (
 	"github.com/coreos/go-etcd/etcd"
 	"os"
 	"syscall"
+	"time"
 )
 
-const VERSION = `0.1.1`
+const VERSION = `0.1.1` // Package version
 
 func main() {
 	config := newConfig()
@@ -25,20 +26,28 @@ func main() {
 	etcdQueue := make(chan *etcd.Response)
 	go client.Watch(config.Prefix, 0, true, etcdQueue, nil)
 	for {
-		<-etcdQueue
-		err := writeNginxFiles(client, &config)
-		if err != nil {
-			fmt.Println(err.Error())
-		}
-		nginx, err := nginxProcess(&config)
-		if err == nil {
-			fmt.Println("Sending SIGHUP to NGiNX process:", nginx.Pid)
-			err = nginx.Signal(syscall.SIGHUP)
+		response := <-etcdQueue
+		if response != nil {
+			fmt.Println("Got changes from node", response.Node.Key)
+			err := writeNginxFiles(client, &config)
 			if err != nil {
-				fmt.Println("WARNING: Can't signal NGiNX:", err)
+				fmt.Println(err.Error())
+			}
+			nginx, err := nginxProcess(&config)
+			if err == nil {
+				fmt.Println("Sending SIGHUP to nginx process:", nginx.Pid)
+				err = nginx.Signal(syscall.SIGHUP)
+				if err != nil {
+					fmt.Println("WARNING: Can't signal nginx:", err)
+				}
+			} else {
+				fmt.Println("WARNING: Can't find nginx:", err)
 			}
 		} else {
-			fmt.Println("WARNING: Can't find NGiNX:", err)
+			fmt.Println("WARNING: etcd missing? Sleeping", ETCD_DELAY, "seconds")
+			time.Sleep(5 * time.Second)           // wait for etcd to recover
+			etcdQueue = make(chan *etcd.Response) // try to reconnect
+			go client.Watch(config.Prefix, 0, true, etcdQueue, nil)
 		}
 	}
 }
