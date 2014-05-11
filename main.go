@@ -4,7 +4,6 @@ import (
 	"fmt"
 	"github.com/coreos/go-etcd/etcd"
 	"os"
-	"syscall"
 	"time"
 )
 
@@ -36,7 +35,7 @@ func main() {
 			nginx, err := nginxProcess(&config)
 			if err == nil {
 				fmt.Println("Sending SIGHUP to nginx process:", nginx.Pid)
-				err = nginx.Signal(syscall.SIGHUP)
+				err = sighup(nginx)
 				if err != nil {
 					fmt.Println("WARNING: Can't signal nginx:", err)
 				}
