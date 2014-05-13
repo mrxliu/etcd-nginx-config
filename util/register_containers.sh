@@ -5,7 +5,7 @@ set -e
 
 echo "Checking for container named 'etcd'..."
 docker inspect etcd >/dev/null 2>&1 || (echo "Starting etcd..." && \
-  docker run -d --name=etcd -P -p 0.0.0.0:4001:4001 coreos/etcd)
+  docker run -d --name=etcd -P -p 4001:4001 coreos/etcd)
 
 #export ETCD_HOST='127.0.0.1'
 export ETCD_PREFIX='/apps'
