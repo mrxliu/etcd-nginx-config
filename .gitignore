@@ -3,6 +3,7 @@ conf.d/
 
 # build
 pkg/
+etcd-nginx-config
 
 # Compiled Object files, Static and Dynamic libs (Shared Objects)
 *.o
