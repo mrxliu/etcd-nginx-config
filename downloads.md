@@ -1,41 +1,40 @@
-etcd-nginx-config downloads (version 0.1.2)
-========
+etcd-nginx-config downloads (version 0.1.3)
 
 ### Darwin (Apple Mac)
 
- * [etcd-nginx-config\_0.1.2\_darwin\_386.zip](http://download.bentonroberts.com/etcd-nginx-config/0.1.2/etcd-nginx-config_0.1.2_darwin_386.zip)
- * [etcd-nginx-config\_0.1.2\_darwin\_amd64.zip](http://download.bentonroberts.com/etcd-nginx-config/0.1.2/etcd-nginx-config_0.1.2_darwin_amd64.zip)
+ * [etcd-nginx-config\_0.1.3\_darwin\_386.zip](http://download.bentonroberts.com/etcd-nginx-config/0.1.3/etcd-nginx-config_0.1.3_darwin_386.zip)
+ * [etcd-nginx-config\_0.1.3\_darwin\_amd64.zip](http://download.bentonroberts.com/etcd-nginx-config/0.1.3/etcd-nginx-config_0.1.3_darwin_amd64.zip)
 
 ### FreeBSD
 
- * [etcd-nginx-config\_0.1.2\_freebsd\_386.zip](http://download.bentonroberts.com/etcd-nginx-config/0.1.2/etcd-nginx-config_0.1.2_freebsd_386.zip)
- * [etcd-nginx-config\_0.1.2\_freebsd\_amd64.zip](http://download.bentonroberts.com/etcd-nginx-config/0.1.2/etcd-nginx-config_0.1.2_freebsd_amd64.zip)
- * [etcd-nginx-config\_0.1.2\_freebsd\_arm.zip](http://download.bentonroberts.com/etcd-nginx-config/0.1.2/etcd-nginx-config_0.1.2_freebsd_arm.zip)
+ * [etcd-nginx-config\_0.1.3\_freebsd\_386.zip](http://download.bentonroberts.com/etcd-nginx-config/0.1.3/etcd-nginx-config_0.1.3_freebsd_386.zip)
+ * [etcd-nginx-config\_0.1.3\_freebsd\_amd64.zip](http://download.bentonroberts.com/etcd-nginx-config/0.1.3/etcd-nginx-config_0.1.3_freebsd_amd64.zip)
+ * [etcd-nginx-config\_0.1.3\_freebsd\_arm.zip](http://download.bentonroberts.com/etcd-nginx-config/0.1.3/etcd-nginx-config_0.1.3_freebsd_arm.zip)
 
 ### Linux
 
- * [etcd-nginx-config\_0.1.2\_amd64.deb](http://download.bentonroberts.com/etcd-nginx-config/0.1.2/etcd-nginx-config_0.1.2_amd64.deb)
- * [etcd-nginx-config\_0.1.2\_armhf.deb](http://download.bentonroberts.com/etcd-nginx-config/0.1.2/etcd-nginx-config_0.1.2_armhf.deb)
- * [etcd-nginx-config\_0.1.2\_i386.deb](http://download.bentonroberts.com/etcd-nginx-config/0.1.2/etcd-nginx-config_0.1.2_i386.deb)
- * [etcd-nginx-config\_0.1.2\_linux\_386.tar.gz](http://download.bentonroberts.com/etcd-nginx-config/0.1.2/etcd-nginx-config_0.1.2_linux_386.tar.gz)
- * [etcd-nginx-config\_0.1.2\_linux\_amd64.tar.gz](http://download.bentonroberts.com/etcd-nginx-config/0.1.2/etcd-nginx-config_0.1.2_linux_amd64.tar.gz)
- * [etcd-nginx-config\_0.1.2\_linux\_arm.tar.gz](http://download.bentonroberts.com/etcd-nginx-config/0.1.2/etcd-nginx-config_0.1.2_linux_arm.tar.gz)
+ * [etcd-nginx-config\_0.1.3\_amd64.deb](http://download.bentonroberts.com/etcd-nginx-config/0.1.3/etcd-nginx-config_0.1.3_amd64.deb)
+ * [etcd-nginx-config\_0.1.3\_armhf.deb](http://download.bentonroberts.com/etcd-nginx-config/0.1.3/etcd-nginx-config_0.1.3_armhf.deb)
+ * [etcd-nginx-config\_0.1.3\_i386.deb](http://download.bentonroberts.com/etcd-nginx-config/0.1.3/etcd-nginx-config_0.1.3_i386.deb)
+ * [etcd-nginx-config\_0.1.3\_linux\_386.tar.gz](http://download.bentonroberts.com/etcd-nginx-config/0.1.3/etcd-nginx-config_0.1.3_linux_386.tar.gz)
+ * [etcd-nginx-config\_0.1.3\_linux\_amd64.tar.gz](http://download.bentonroberts.com/etcd-nginx-config/0.1.3/etcd-nginx-config_0.1.3_linux_amd64.tar.gz)
+ * [etcd-nginx-config\_0.1.3\_linux\_arm.tar.gz](http://download.bentonroberts.com/etcd-nginx-config/0.1.3/etcd-nginx-config_0.1.3_linux_arm.tar.gz)
 
 ### MS Windows
 
- * [etcd-nginx-config\_0.1.2\_windows\_386.zip](http://download.bentonroberts.com/etcd-nginx-config/0.1.2/etcd-nginx-config_0.1.2_windows_386.zip)
- * [etcd-nginx-config\_0.1.2\_windows\_amd64.zip](http://download.bentonroberts.com/etcd-nginx-config/0.1.2/etcd-nginx-config_0.1.2_windows_amd64.zip)
+ * [etcd-nginx-config\_0.1.3\_windows\_386.zip](http://download.bentonroberts.com/etcd-nginx-config/0.1.3/etcd-nginx-config_0.1.3_windows_386.zip)
+ * [etcd-nginx-config\_0.1.3\_windows\_amd64.zip](http://download.bentonroberts.com/etcd-nginx-config/0.1.3/etcd-nginx-config_0.1.3_windows_amd64.zip)
 
 ### NetBSD
 
- * [etcd-nginx-config\_0.1.2\_netbsd\_386.zip](http://download.bentonroberts.com/etcd-nginx-config/0.1.2/etcd-nginx-config_0.1.2_netbsd_386.zip)
- * [etcd-nginx-config\_0.1.2\_netbsd\_amd64.zip](http://download.bentonroberts.com/etcd-nginx-config/0.1.2/etcd-nginx-config_0.1.2_netbsd_amd64.zip)
- * [etcd-nginx-config\_0.1.2\_netbsd\_arm.zip](http://download.bentonroberts.com/etcd-nginx-config/0.1.2/etcd-nginx-config_0.1.2_netbsd_arm.zip)
+ * [etcd-nginx-config\_0.1.3\_netbsd\_386.zip](http://download.bentonroberts.com/etcd-nginx-config/0.1.3/etcd-nginx-config_0.1.3_netbsd_386.zip)
+ * [etcd-nginx-config\_0.1.3\_netbsd\_amd64.zip](http://download.bentonroberts.com/etcd-nginx-config/0.1.3/etcd-nginx-config_0.1.3_netbsd_amd64.zip)
+ * [etcd-nginx-config\_0.1.3\_netbsd\_arm.zip](http://download.bentonroberts.com/etcd-nginx-config/0.1.3/etcd-nginx-config_0.1.3_netbsd_arm.zip)
 
 ### OpenBSD
 
- * [etcd-nginx-config\_0.1.2\_openbsd\_386.zip](http://download.bentonroberts.com/etcd-nginx-config/0.1.2/etcd-nginx-config_0.1.2_openbsd_386.zip)
- * [etcd-nginx-config\_0.1.2\_openbsd\_amd64.zip](http://download.bentonroberts.com/etcd-nginx-config/0.1.2/etcd-nginx-config_0.1.2_openbsd_amd64.zip)
+ * [etcd-nginx-config\_0.1.3\_openbsd\_386.zip](http://download.bentonroberts.com/etcd-nginx-config/0.1.3/etcd-nginx-config_0.1.3_openbsd_386.zip)
+ * [etcd-nginx-config\_0.1.3\_openbsd\_amd64.zip](http://download.bentonroberts.com/etcd-nginx-config/0.1.3/etcd-nginx-config_0.1.3_openbsd_amd64.zip)
 
 ### Other files
 
@@ -43,7 +42,7 @@ etcd-nginx-config downloads (version 0.1.2)
 
 ### Plan 9
 
- * [etcd-nginx-config\_0.1.2\_plan9\_386.zip](http://download.bentonroberts.com/etcd-nginx-config/0.1.2/etcd-nginx-config_0.1.2_plan9_386.zip)
+ * [etcd-nginx-config\_0.1.3\_plan9\_386.zip](http://download.bentonroberts.com/etcd-nginx-config/0.1.3/etcd-nginx-config_0.1.3_plan9_386.zip)
 
 
 

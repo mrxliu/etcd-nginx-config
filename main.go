@@ -7,7 +7,7 @@ import (
 	"time"
 )
 
-const VERSION = "0.1.2" // Package version
+const VERSION = "0.1.3" // Package version
 
 func main() {
 	config := newConfig()
