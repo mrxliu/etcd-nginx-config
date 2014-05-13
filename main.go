@@ -20,6 +20,7 @@ func main() {
 		fmt.Println(err.Error())
 		os.Exit(1)
 	}
+	signalNginx(&config)
 
 	fmt.Println("Watching etcd for changes on prefix:", config.Prefix)
 	etcdQueue := make(chan *etcd.Response)
@@ -31,16 +32,8 @@ func main() {
 			err := writeNginxFiles(client, &config)
 			if err != nil {
 				fmt.Println("WARNING: error writing nginx config files:", err)
-			}
-			nginx, err := nginxProcess(&config)
-			if err == nil {
-				fmt.Println("Sending SIGHUP to nginx process:", nginx.Pid)
-				err = sighup(nginx)
-				if err != nil {
-					fmt.Println("WARNING: Can't signal nginx:", err)
-				}
 			} else {
-				fmt.Println("WARNING: Can't find nginx:", err)
+				signalNginx(&config)
 			}
 		} else {
 			fmt.Println("WARNING: etcd missing? Sleeping", ETCD_DELAY, "seconds")

@@ -4,11 +4,20 @@
 package main
 
 import (
-	"os"
+	"fmt"
 	"syscall"
 )
 
 // sends SIGHUP to a process
-func sighup(process *os.Process) error {
-	return process.Signal(syscall.SIGHUP)
+func signalNginx(config *Config) {
+	nginx, err := nginxProcess(config)
+	if err == nil {
+		fmt.Println("Sending SIGHUP to nginx process:", nginx.Pid)
+		err = nginx.Signal(syscall.SIGHUP)
+		if err != nil {
+			fmt.Println("WARNING: Can't signal nginx:", err)
+		}
+	} else {
+		fmt.Println("WARNING: Can't find nginx:", err)
+	}
 }
