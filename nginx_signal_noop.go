@@ -3,9 +3,7 @@
 package main
 
 import (
-	"errors"
 	"fmt"
-	"os"
 )
 
 // Returns an error indicating no SIGHUP is available on this platform
