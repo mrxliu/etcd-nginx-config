@@ -1,6 +1,7 @@
 package main
 
 import (
+	"errors"
 	"io"
 	"os"
 	"strconv"
@@ -19,9 +20,13 @@ func nginxPID(config *Config) (int, error) {
 		buf := make([]byte, 1024) // read up to 1K from the PID file
 		bytes, err := pidFile.Read(buf)
 		if err == nil || err == io.EOF {
-			pid, err = strconv.Atoi(string(buf[0 : bytes-1])) // convert to int
-			if err != nil {
-				return -1, err
+			if bytes < 1 {
+				return -1, errors.New("Empty PID file!")
+			} else { // convert contents of PID file to int
+				pid, err = strconv.Atoi(string(buf[0 : bytes-1]))
+				if err != nil {
+					return -1, err
+				}
 			}
 		}
 	}
